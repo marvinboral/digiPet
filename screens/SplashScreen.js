@@ -9,7 +9,7 @@
 import React, { useEffect } from 'react';
 import { StyleSheet, View, Animated } from 'react-native';
 
-const SplashScreen = ({ onFinish }) => {
+const SplashScreen = ({ onAnimationStart }) => {
     const fadeAnim = new Animated.Value(0);
 
     useEffect(() => {
@@ -17,11 +17,11 @@ const SplashScreen = ({ onFinish }) => {
             fadeAnim,
             {
                 toValue: 1,
-                duration: 70000,
+                duration: 10000,
                 useNativeDriver: true,
             }
         ).start(() => {
-            onFinish();
+            onAnimationStart();
         });
     }, []);
 
