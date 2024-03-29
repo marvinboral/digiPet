@@ -27,15 +27,19 @@ const Pet = ({ petState, onInteraction }) => {
             const currentTime = Date.now();
             const elapsedTime = currentTime - lastInteractionTime;
 
-            if (elapsedTime >= 20000) { // 20 seconds
-                onInteraction('dead');
+            if (elapsedTime >= 30000) { // 30 seconds
+                onInteraction('angel');
                 clearInterval(interval); // Stop the interval when the pet is dead
-            } else if (elapsedTime >= 15000) { // 15 seconds
+            } else if (elapsedTime >= 25000) { // 25 seconds
+                onInteraction('dead');
+            } else if (elapsedTime >= 25000) { // 25 seconds
                 onInteraction('sleep');
+            } else if (elapsedTime >= 15000) { // 15 seconds
+                onInteraction('cry');
             } else if (elapsedTime >= 10000) { // 10 seconds
-                onInteraction('hungry');
-            } else if (elapsedTime >= 5000) { // 5 seconds
                 onInteraction('sad');
+            } else if (elapsedTime >= 5000) { // 5 seconds
+                onInteraction('hungry');
             }
         }, 1000); // Check every second for simplicity, adjust as needed
 
@@ -54,6 +58,9 @@ const Pet = ({ petState, onInteraction }) => {
         case 'sad':
             imageSource = require('../assets/images/sad.png');
             break;
+        case 'cry':
+            imageSource = require('../assets/images/cry.png');
+            break;
         case 'sleep':
             imageSource = require('../assets/images/sleep.png');
             break;
@@ -62,6 +69,9 @@ const Pet = ({ petState, onInteraction }) => {
             break;
         case 'dead':
             imageSource = require('../assets/images/dead.png');
+            break;
+        case 'angel':
+            imageSource = require('../assets/images/angel.png');
             break;
         default:
             imageSource = require('../assets/images/pet.png');
