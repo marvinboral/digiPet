@@ -8,35 +8,39 @@
 
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { Audio } from 'expo-av';
 import { styles } from '../styles/petStyles';
 
 const Pet = ({ petState, onInteraction }) => {
-    const [lastInteractionTime, setLastInteractionTime] = useState(new Date());
+    const [lastInteractionTime, setLastInteractionTime] = useState(Date.now());
 
+    // Update last interaction time when petState changes
     useEffect(() => {
-        const interactionInterval = setInterval(() => {
-            const currentTime = new Date();
+        console.log('petState changed:', petState); //log to check the petstate change
+        if (petState === 'touched') {
+            setLastInteractionTime(Date.now());
+        }
+    }, [petState]);
+
+    // Check for pet state updates based on interaction time
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const currentTime = Date.now();
             const elapsedTime = currentTime - lastInteractionTime;
 
-            if (elapsedTime >= 500000) { // 8 minutes and 20 seconds
+            if (elapsedTime >= 20000) { // 20 seconds
                 onInteraction('dead');
-            } else if (elapsedTime >= 300000) { // 5 minutes
+                clearInterval(interval); // Stop the interval when the pet is dead
+            } else if (elapsedTime >= 15000) { // 15 seconds
+                onInteraction('sleep');
+            } else if (elapsedTime >= 10000) { // 10 seconds
                 onInteraction('hungry');
+            } else if (elapsedTime >= 5000) { // 5 seconds
+                onInteraction('sad');
             }
         }, 1000); // Check every second for simplicity, adjust as needed
 
-        return () => clearInterval(interactionInterval);
+        return () => clearInterval(interval);
     }, [lastInteractionTime, onInteraction]);
-
-    useEffect(() => {
-        if (petState === 'touched') {
-            const timeout = setTimeout(() => {
-                onInteraction('pat', 'normal');
-            }, 2000); // 2 seconds
-            return () => clearTimeout(timeout);
-        }
-    }, [petState, onInteraction]);
 
     // Map petState to corresponding image
     let imageSource;
@@ -66,7 +70,9 @@ const Pet = ({ petState, onInteraction }) => {
 
     return (
         <View style={styles.container}>
-            <Image source={imageSource} style={styles.petImage} />
+            <TouchableOpacity onPress={() => onInteraction('touched')}>
+                <Image source={imageSource} style={styles.petImage} />
+            </TouchableOpacity>
             <Text style={styles.statusText}>Pet Status: {petState}</Text>
         </View>
     );

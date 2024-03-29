@@ -13,7 +13,7 @@ import { styles } from '../styles/interactionStyles';
 
 const Interaction = ({ onInteraction }) => {
     const handlePat = () => {
-        onInteraction('pat', 'touched');
+        onInteraction('touched');
 
         // Load and play the touched sound
         const soundObject = new Audio.Sound();
@@ -23,11 +23,18 @@ const Interaction = ({ onInteraction }) => {
         } catch (error) {
             console.error('Failed to play sound:', error);
         }
+
+        // Set the state back to 'normal' after 2 seconds
+        setTimeout(() => {
+            onInteraction('normal');
+        }, 2000);
     };
 
     const handleFeed = () => {
-        onInteraction('feed', 'normal'); // For simplicity, reset the state to normal after feeding
+        onInteraction('normal');
     };
+
+
 
     return (
         <View style={styles.container}>

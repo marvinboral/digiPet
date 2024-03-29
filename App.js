@@ -53,8 +53,7 @@ export default function App() {
         return <SplashScreenComponent onAnimationStart={startApp} />;
     }
 
-    const handleInteraction = (interactionType, newState) => {
-        // Implement logic to update petState based on interactionType and newState
+    const handleInteraction = (newState) => {
         setPetState(newState);
     };
 
