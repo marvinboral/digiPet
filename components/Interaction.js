@@ -2,31 +2,41 @@
  * File:    Interaction.js
  * Author:  Marvin Boral
  * Date:    March 27, 2024
- * Brief:   Inventory Items
- * TODO:    the stuff, for now. placeholder
+ * Brief:   Interaction component for pet actions
+ * TODO:    Implement pet interaction logic and sound effects
  */
 
-
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, TouchableOpacity, Text } from 'react-native';
+import { Audio } from 'expo-av';
+import { styles } from '../styles/interactionStyles';
 
-const Interaction = () => {
-    const onPat = () => {
-        // TO Do:Implement patting interaction
+const Interaction = ({ onInteraction }) => {
+    const handlePat = () => {
+        onInteraction('pat', 'touched');
+
+        // Load and play the touched sound
+        const soundObject = new Audio.Sound();
+        try {
+            soundObject.loadAsync(require('../assets/sounds/huh.wav'))
+                .then(() => soundObject.playAsync());
+        } catch (error) {
+            console.error('Failed to play sound:', error);
+        }
     };
 
-    const onFeed = () => {
-        // todo: Implement feeding interaction
+    const handleFeed = () => {
+        onInteraction('feed', 'normal'); // For simplicity, reset the state to normal after feeding
     };
 
     return (
-        <View>
-            <Pressable onPress={onPat}>
-                <Text>Pat</Text>
-            </Pressable>
-            <Pressable onPress={onFeed}>
-                <Text>Feed</Text>
-            </Pressable>
+        <View style={styles.container}>
+            <TouchableOpacity onPress={handlePat} style={styles.button}>
+                <Text style={styles.buttonText}>Pat</Text>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={handleFeed} style={styles.button}>
+                <Text style={styles.buttonText}>Feed</Text>
+            </TouchableOpacity>
         </View>
     );
 }

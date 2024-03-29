@@ -1,14 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 import SplashScreenComponent from './screens/SplashScreen';
 import Pet from './components/Pet';
 import Interaction from './components/Interaction';
-import Inventory from './components/Inventory';
 import { Audio } from 'expo-av';
 import { Entypo } from '@expo/vector-icons';
-
 
 // Prevent the splash screen from auto-hiding
 SplashScreen.preventAutoHideAsync();
@@ -16,6 +14,7 @@ SplashScreen.preventAutoHideAsync();
 export default function App() {
     const [appIsReady, setAppIsReady] = useState(false);
     const [sound, setSound] = useState(); // State to hold the loaded sound object
+    const [petState, setPetState] = useState('normal');
 
     useEffect(() => {
         async function prepare() {
@@ -54,11 +53,15 @@ export default function App() {
         return <SplashScreenComponent onAnimationStart={startApp} />;
     }
 
+    const handleInteraction = (interactionType, newState) => {
+        // Implement logic to update petState based on interactionType and newState
+        setPetState(newState);
+    };
+
     return (
         <View style={styles.container}>
-            <Pet />
-            <Interaction />
-            <Inventory />
+            <Pet petState={petState} onInteraction={handleInteraction} />
+            <Interaction onInteraction={handleInteraction} />
         </View>
     );
 }

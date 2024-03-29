@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\assets",
+    "\\assets\\images",
+    "\\components",
+    "\\screens",
+    "\\styles"
   ],
+  "SelectedNode": "\\components\\Pet.js",
   "PreviewInSolutionExplorer": false
 }
