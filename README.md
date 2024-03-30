@@ -173,16 +173,14 @@ This directory contains the main files of digiPet.
 - `App.js`: This is the main JavaScript file that holds the base component of the React app.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
-- [MS SQL 2019](https://www.microsoft.com/en-us/sql-server/sql-server-2019) - Database
-- [Windows Server 2019](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019#Overview) - Server Framework and Environment
-- [.NET 6](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-6) - Web Framework
-- [Javascript](https://www.javascript.com/) - Front-End Web Development
-- [Microsoft C#](https://learn.microsoft.com/en-us/dotnet/csharp/) - Back-End Development
+- [Javascript](https://www.javascript.com/) 
+- [Expo](https://docs.expo.dev/get-started/installation/)
 
 ## ✍️ Authors <a name = "authors"></a>
 - [@marvinboral](https://github.com/marvinboral) 
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
+- [@kylelobo](https://github.com/kylelobo) - readme.md template
 - [How to create an App Icon and Splash Screen for an Expo Project](https://www.youtube.com/watch?v=QSNkU7v0MPc) 
 - [Splash Screen code](https://docs.expo.dev/versions/latest/sdk/splash-screen/)
 - [RO Data](https://rod.2-d.jp/index.php/page/mob2) - source of my pet images which is poring from Ragnarok Online
