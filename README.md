@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <a href="" rel="noopener">
  <img width=200px height=200px src="./assets/icon.png" alt="Project Logo"></a>
 </p>
@@ -20,7 +20,7 @@
     <br> 
 </p>
 
-## ?? Table of Contents
+## 📝 Table of Contents
 - [Project Introduction](#project_intro)
 - [Project Goal](#project_goal)
 - [Getting Started](#getting_started)
@@ -37,7 +37,7 @@
 - [Authors](#authors)
 - [Acknowledgments](#acknowledgement)
 
-# ?? Project Introduction <a name = "project_intro"></a>
+# 🧐 Project Introduction <a name = "project_intro"></a>
 This assignment is `digiPet` which aims to demonstrate our competency with various controls based on what we have learned in Mobile Application Development. 
 
 ## Project Goal <a name = "project_goal"></a>
@@ -72,7 +72,7 @@ The pet should:
 - orientation
 - expo-sqlite or database
 
-# ?? Getting Started <a name = "getting_started"></a>
+# 🏁 Getting Started <a name = "getting_started"></a>
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
 ## Prerequisites
@@ -145,25 +145,25 @@ Once you have cloned the repository and configured the SQL Server, follow these 
 
 This project is organized into several directories and files. 
 
-# ??  digiPet
+# 📁  digiPet
 
 Main directory
 
-## ??  assets
-Contains the assets used for this project.  As of this documentation, it has two subfolders `?? images` and `?? sounds`
+## 📁  assets
+Contains the assets used for this project.  As of this documentation, it has two subfolders `📁 images` and `📁 sounds`
 
-## ?? Components
+## 📁 Components
 - `Interaction.js`: Handles the interaction components and buttons for the pet. 
 - `Inventory.js`: Supposed to handle the inventory system for the pet. `not implemented`
 - `Pet.js`: Handles the petState and image mapping of the pet according to its State.
 
-## ?? Styles
+## 📁 Styles
 Handles the styles per component. 
 - `interactionStyle.js`
 - `inventoryStyle.js`
 - `petStyles.js`
 
-## ?? screens
+## 📁 screens
 - `SplashScreen.js` - handles the SplashScreen animation 
 
 ## Main Files
@@ -172,23 +172,23 @@ This directory contains the main files of digiPet.
 
 - `App.js`: This is the main JavaScript file that holds the base component of the React app.
 
-## ?? Usage <a name="usage"></a>
+## 🎈 Usage <a name="usage"></a>
 Add notes about how to use the system. (TO DO)
 
-## ?? Deployment <a name = "deployment"></a>
+## 🚀 Deployment <a name = "deployment"></a>
 TO DO
 
-## ?? Built Using <a name = "built_using"></a>
+## ⛏️ Built Using <a name = "built_using"></a>
 - [MS SQL 2019](https://www.microsoft.com/en-us/sql-server/sql-server-2019) - Database
 - [Windows Server 2019](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019#Overview) - Server Framework and Environment
 - [.NET 6](https://learn.microsoft.com/en-us/dotnet/core/whats-new/dotnet-6) - Web Framework
 - [Javascript](https://www.javascript.com/) - Front-End Web Development
 - [Microsoft C#](https://learn.microsoft.com/en-us/dotnet/csharp/) - Back-End Development
 
-## ?? Authors <a name = "authors"></a>
+## ✍️ Authors <a name = "authors"></a>
 - [@marvinboral](https://github.com/marvinboral) 
 
-## ?? Acknowledgements <a name = "acknowledgement"></a>
+## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 - [How to create an App Icon and Splash Screen for an Expo Project](https://www.youtube.com/watch?v=QSNkU7v0MPc) 
 - [Splash Screen code](https://docs.expo.dev/versions/latest/sdk/splash-screen/)
 - [RO Data](https://rod.2-d.jp/index.php/page/mob2) - source of my pet images which is poring from Ragnarok Online
