@@ -27,10 +27,11 @@ const Pet = ({ petState, onInteraction }) => {
             const currentTime = Date.now();
             const elapsedTime = currentTime - lastInteractionTime;
 
-            if (elapsedTime >= 30000) { // 30 seconds
+
+            if (elapsedTime >= 35000) { // 35 seconds
                 onInteraction('angel');
                 clearInterval(interval); // Stop the interval when the pet is dead
-            } else if (elapsedTime >= 25000) { // 25 seconds
+            } else if (elapsedTime >= 30000) { // 30 seconds
                 onInteraction('dead');
             } else if (elapsedTime >= 25000) { // 25 seconds
                 onInteraction('sleep');

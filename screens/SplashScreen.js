@@ -17,7 +17,7 @@ const SplashScreen = ({ onAnimationStart }) => {
             fadeAnim,
             {
                 toValue: 1,
-                duration: 10000,
+                duration: 10000, //10 seconds adjust the duration if necessary
                 useNativeDriver: true,
             }
         ).start(() => {
@@ -28,7 +28,7 @@ const SplashScreen = ({ onAnimationStart }) => {
     return (
         <View style={styles.container}>
             <Animated.Image
-                source={require('../assets/images/splash.png')}
+                source={require('../assets/images/splash.png')} 
                 style={{
                     opacity: fadeAnim,
                     width: '100%',

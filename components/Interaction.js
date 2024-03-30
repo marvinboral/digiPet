@@ -24,7 +24,7 @@ const Interaction = ({ onInteraction }) => {
             console.error('Failed to play sound:', error);
         }
 
-        // Set the state back to 'normal' after 2 seconds
+        // Set the state back to 'normal' after 2 seconds after being touched
         setTimeout(() => {
             onInteraction('normal');
         }, 2000);
@@ -34,7 +34,7 @@ const Interaction = ({ onInteraction }) => {
         onInteraction('normal');
     };
 
-
+    //TODO: other interaction logic and buttons
 
     return (
         <View style={styles.container}>
