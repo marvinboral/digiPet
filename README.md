@@ -172,12 +172,6 @@ This directory contains the main files of digiPet.
 
 - `App.js`: This is the main JavaScript file that holds the base component of the React app.
 
-## 🎈 Usage <a name="usage"></a>
-Add notes about how to use the system. (TO DO)
-
-## 🚀 Deployment <a name = "deployment"></a>
-TO DO
-
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [MS SQL 2019](https://www.microsoft.com/en-us/sql-server/sql-server-2019) - Database
 - [Windows Server 2019](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019#Overview) - Server Framework and Environment
